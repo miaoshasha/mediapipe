@@ -16,7 +16,13 @@ licenses(["notice"])  # Apache 2.0
 
 package(default_visibility = ["//visibility:public"])
 
+#alias(
+#    name = "provisioning_profile",
+#    actual = "//mediapipe:provisioning_profile.mobileprovision",
+#)
+exports_files(["developer_provisioning_profile.mobileprovision"])
+
 alias(
     name = "provisioning_profile",
-    actual = "//mediapipe:provisioning_profile.mobileprovision",
+    actual = ":developer_provisioning_profile.mobileprovision"
 )
